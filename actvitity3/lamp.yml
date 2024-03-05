@@ -37,44 +37,6 @@
       service:
         name: "{{ package }}"
         state: restarted
-
-
-linux, apache, mysql, php
-
--100 servers
-
-tasks:
- - name: install some {{ webserver }}
-    apt:
-     - name: "{{ package }}"
-       state: present
-       100 servers
- - name: install some {{ webserver }}
-    service:
-     - name: "{{ package }}"
-       state: present
-       
-inventory.yaml
-[webserver]
-ip package=apache2
-
-2
-vars.yaml
----
-package: apache2
-
-3
-group_vars
-
-all.yaml
----
-packages: apache
-mysql_version: 1.39
-
-rds: 24.37
-
-webserver
-package: apache
          
        
 
